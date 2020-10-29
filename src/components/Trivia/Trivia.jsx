@@ -26,23 +26,21 @@ export default function Trivia() {
     setCurrentIndex(prevCurrentIndex => prevCurrentIndex + 1)
   }
 
+  const randomOrder = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i)
+      const temp = array[i]
+      array[i] = array[j]
+      array[j] = temp
+    }
+    return array
+  }
   
-  // useEffect(() => {
-  //   let answers = [...question.incorrect, question.correct]
-  //     console.log(answers)
-  // }, [])
+  useEffect(async () => {
+    let testAnswers = await [...question.incorrect, question.correct]
+    setAnswers(randomOrder(testAnswers))
+  }, [question])
 
-  // const randomOrder = (array) => {
-  //   for (let i = array.length - 1; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * i)
-  //     const temp = array[i]
-  //     array[i] = array[j]
-  //     array[j] = temp
-  //   }
-  //   return array
-  // }
-
-  // console.log(randomOrder(['hi', 'there' , 'world' , 4]))
 
   
   return (
@@ -52,8 +50,7 @@ export default function Trivia() {
         <ProgressBar completed={(currentIndex + 1)/10 * 100}/>
       
         <p>{question.question}</p>
-        {question.incorrect.map(answer => <li>{answer}</li>)}
-        <li>{question.correct}</li>
+        {answers.map(answer => <li>{answer}</li>)}
         {currentIndex < 9 ? <button onClick={nextQuestion}>Next Question</button> : <button>Score</button>}
     </div> : null
   )
