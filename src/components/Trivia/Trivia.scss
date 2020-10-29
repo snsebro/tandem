@@ -1,0 +1,39 @@
+.answer:hover {
+  cursor: pointer;
+  color: black;
+  background-color:#EBEBEB;
+}
+
+.selected {
+  cursor: pointer;
+  background-color:#EBEBEB;
+  color: black;
+}
+
+.trivia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  margin: 50px;
+}
+
+.correct {
+  background-color: green;
+}
+
+

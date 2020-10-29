@@ -1,13 +1,15 @@
 import React, {useState, useContext, useEffect} from 'react'
 import { QuestionContext } from '../../context/QuestionContext'
 import ProgressBar from '../ProgressBar/ProgressBar'
+import './Trivia.scss'
 
 
 export default function Trivia() {
   const [question, setQuestion] = useState('')
   const [answers, setAnswers] = useState([])
-  const [randomAnswers, setRandomAnswers] = useState([])
+  const [selectedAnswer, setSelectedAnswer] = useState('')
   const [currentScore, setCurrentScore] = useState(0)
+  const [submit, setSubmit] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   
   const questionList = useContext(QuestionContext)
@@ -17,12 +19,18 @@ export default function Trivia() {
       return
     }
     setQuestion(questionList.questions[currentIndex])
+    setSubmit(false)
   }, [currentIndex])
 
   const nextQuestion = async () => {
     if (!questionList.questions[currentIndex]) {
       return
     }
+
+    if (selectedAnswer == question.correct) {
+      setCurrentScore(preCurrentScore => preCurrentScore + 1)
+    }
+
     setCurrentIndex(prevCurrentIndex => prevCurrentIndex + 1)
   }
 
@@ -37,20 +45,26 @@ export default function Trivia() {
   }
   
   useEffect(async () => {
-    let testAnswers = await [...question.incorrect, question.correct]
-    setAnswers(randomOrder(testAnswers))
+    if (question) {
+      let testAnswers = await [...question.incorrect, question.correct]
+      setAnswers(randomOrder(testAnswers))
+    }
   }, [question])
 
 
   
   return (
     question ? 
-      <div>
+      <div className="trivia">
       <h1>TANDEM</h1>
         <ProgressBar completed={(currentIndex + 1)/10 * 100}/>
       
-        <p>{question.question}</p>
-        {answers.map(answer => <li>{answer}</li>)}
+        <h3>{question.question}</h3>
+        {answers.map(answer =>
+          <p
+            className={`${selectedAnswer == answer && !submit ? 'selected' : 'answer'} ${answer == question.correct && submit ? 'correct' : 'incorrect'}`} onClick={() => setSelectedAnswer(answer)}>{answer}
+          </p>)}
+        <button onClick={() => setSubmit(true)}>Submit</button>
         {currentIndex < 9 ? <button onClick={nextQuestion}>Next Question</button> : <button>Score</button>}
     </div> : null
   )
