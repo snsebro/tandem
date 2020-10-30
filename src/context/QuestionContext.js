@@ -23,7 +23,7 @@ const QuestionContextProvider = (props) => {
 
     for (let i = 0; i < max; i++) {
       let temp = Math.floor(Math.random() * max);
-      if (randomNums.indexOf(temp) == -1) {
+      if (randomNums.indexOf(temp) === -1) {
         randomNums.push(temp);
       } else i--;
     }

@@ -4,7 +4,7 @@ export default function ProgressBar(props) {
   const { completed } = props
 
   const containerStyles = {
-    height: 10,
+    height: 6,
     width: '80%',
     backgroundColor: '#EBEBEB',
     borderRadius: 50,

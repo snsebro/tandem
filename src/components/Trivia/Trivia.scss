@@ -1,39 +1,57 @@
-.answer:hover {
-  cursor: pointer;
-  color: black;
-  background-color:#EBEBEB;
-}
-
-.selected {
-  cursor: pointer;
-  background-color:#EBEBEB;
-  color: black;
-}
 
 .trivia {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    margin: 40px 0px;
+    letter-spacing: 10px;
+    font-weight: 400;
+  }
+
+  h3 {
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  
+  .answer:hover {
+    cursor: pointer;
+    color: black;
+    background-color:#EBEBEB;
+    transition: 1s;
+  }
+  
+  .selected {
+    cursor: pointer;
+    background-color:#EBEBEB;
+    color: black;
+  }
+
+  p {
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+  
+  button {
+    margin: 20px 0px 20px 0px;
+    color: white;
+    font-size: 15px;
+    padding: 12px 30px;
+    letter-spacing: 2px;
+    background-color: black;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .correct {
+    background-color: #7FAA78;
+    font-weight: 500;
+  }
 }
 
-p {
-  padding: 10px 15px;
-  border-radius: 30px;
-}
-
-button {
-  background-color: black;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  margin: 50px;
-}
-
-.correct {
-  background-color: green;
-}
 
 

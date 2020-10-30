@@ -1,0 +1,42 @@
+.tandem-div {
+  background-color: #1D1A2A;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    letter-spacing: 10px;
+    font-weight: 400;
+  }
+
+  p {
+    width: 50%;
+    font-size: 18x;
+    line-height: 30px;
+    margin: 40px 0;
+    color: #a5a3ac;
+  }
+
+  button {
+    margin: 0px 0px 20px 0px;
+    color: white;
+    font-size: 18px;
+    padding: 12px 30px;
+    letter-spacing: 2px;
+    background-color: #1D1A2A;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  a {
+    margin: 0;
+  }
+}
+
