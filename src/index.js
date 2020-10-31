@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
+import QuestionContextProvider from "./context/QuestionContext";
 
 ReactDOM.render(
-    <BrowserRouter>
+  <BrowserRouter>
+  
+    <QuestionContextProvider>
       <App />
-    </BrowserRouter>
+    </QuestionContextProvider>
+
+  </BrowserRouter>
  ,
   document.getElementById('root')
 );

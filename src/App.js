@@ -10,9 +10,9 @@ function App() {
     <QuestionContextProvider>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={Welcome}/>
+          <Route exact path="/" component={Welcome} />
           <Route exact path="/trivia" component={Trivia} />
-          <Route path="/score" component={Score}/>
+          <Route path="/score" component={Score} />
         </Switch>
       </div>
     </QuestionContextProvider>
