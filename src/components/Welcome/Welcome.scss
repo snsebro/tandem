@@ -1,5 +1,5 @@
 .tandem-div {
-  background-color: #1D1A2A;
+  background-color: #1d1a2a;
   height: 100vh;
   margin: 0;
   color: white;
@@ -28,7 +28,7 @@
     font-size: 18px;
     padding: 12px 30px;
     letter-spacing: 2px;
-    background-color: #1D1A2A;
+    background-color: #1d1a2a;
     border-radius: 30px;
     border: none;
     outline: none;
@@ -38,5 +38,10 @@
   a {
     margin: 0;
   }
-}
 
+  @media (min-width: 550px) {
+    p {
+      width: 70%;
+    }
+  }
+}

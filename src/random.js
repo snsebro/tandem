@@ -1,3 +1,4 @@
+//returns the provided parameter array in a randomized order
 export const randomOrder = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * i)
@@ -8,6 +9,7 @@ export const randomOrder = (array) => {
   return array
 }
 
+//returns an array of randomized numbers from 0 - 21 which will represent the indices of selected questions for a trivia round
 export const randomNumbers = () => {
   let max = 10;
   let randomNums = [];
