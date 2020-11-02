@@ -3,7 +3,7 @@ Tandem Code Challenge
 
 ## Overview
 
-**Tandem Trivia** is trivia application built using a React.js client and Sass for styling. Users on the frontend are able to view a set of 10 randomized trivia questions, submit answers, and see their total score at the end of each round.
+**Tandem Trivia** is trivia application built using React.js to render client facing components and Sass for styling. Users on the frontend are able to view a set of 10 randomized trivia questions, submit answers, and see their total score at the end of each round.
 
 <br>
 
