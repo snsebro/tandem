@@ -5,7 +5,6 @@ import { randomNumbers } from "../random";
 export const QuestionContext = createContext();
 
 const QuestionContextProvider = (props) => {
-  const [index, setIndex] = useState([]);
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
